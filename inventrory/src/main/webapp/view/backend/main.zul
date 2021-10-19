@@ -1,0 +1,16 @@
+<?page title="new page title" contentType="text/html;charset=UTF-8"?>
+<zk>
+	<window title="Page Admin" border="normal"
+		viewModel=" @id('vm') @init('com.sdd.inventory.viewmodel.backend.MainVm')">
+		<label value="Halaman Utama ADMIN " style="font-size:22px" />
+		<separator />
+		<hlayout>
+			<a label="Home" onClick="@command('doNav', page='home.zul')" />
+			<a label="product" onClick="@command('doNav', page='product.zul')" />
+			<a label="Order" onClick="@command('doNav',page='order.zul')" />
+			
+		</hlayout>
+		<separator />
+		<div id="divContent" />
+	</window>
+</zk>
