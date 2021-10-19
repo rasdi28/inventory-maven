@@ -1,0 +1,16 @@
+<?page title="new page title" contentType="text/html;charset=UTF-8"?>
+<zk>
+	<window title="new page title" border="normal"
+		viewModel=" @id('vm') @init('com.sdd.inventory.viewmodel.mainVm')">
+		<label value="Halaman Utama " style="font-size:22px" />
+		<separator />
+		<hlayout>
+			<a label="Home" onClick="@command('doNav', page='view/home.zul')" />
+			<a label="product" onClick="@command('doNav', page='view/product.zul')" />
+			<a label="Transaksi" onClick="@command('doNav',page='view/transaksi.zul')" />
+			<a label="Login" onClick="@command('doNav',page='login.zul')" />
+		</hlayout>
+		<separator />
+		<div id="divContent" />
+	</window>
+</zk>

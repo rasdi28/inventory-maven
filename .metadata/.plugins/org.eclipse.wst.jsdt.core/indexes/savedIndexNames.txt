@@ -1,6 +1,2 @@
 INDEX VERSION 1.4+D:\Project\SDD\inventory-maven\.metadata\.plugins\org.eclipse.wst.jsdt.core\indexes
-4118115496.index
-1829197701.index
-4080841030.index
-4221184297.index
-2600496661.index
+394678312.index

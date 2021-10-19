@@ -1,0 +1,90 @@
+<?page title="new page title" contentType="text/html;charset=UTF-8"?>
+<zk>
+	<window title="new page title" border="normal"
+		viewModel=" @id('vm') @init('com.sdd.inventory.viewmodel.backend.ProductVm')">
+		<separator />
+		<groupbox
+			form="@id('e') @load(vm.objproduct) @save(vm.objproduct, before='doSubmit')"
+			title="Form Product">
+
+			<grid>
+				<columns>
+					<column />
+					<column />
+				</columns>
+				<rows>
+					<row>
+						<label value="Product Name" />
+						<textbox value="@bind(e.productname)" />
+					</row>
+					<row>
+						<label value="Product Stock" />
+						<intbox value="@bind(e.productstock)" />
+					</row>
+					<row>
+						<label value="Product Price" />
+						<decimalbox value="@bind(e.productprice)"
+							format="###,##0" />
+					</row>
+
+				</rows>
+				<foot>
+					<footer />
+					<footer>
+						<hlayout>
+							<button label="submit" id="btnSubmit"
+								onClick="@command('doSubmit')" />
+							<button label="Delete" id="btnDelete"
+								onClick="@command('doDelete')" />
+
+						</hlayout>
+
+					</footer>
+				</foot>
+			</grid>
+
+		</groupbox>
+
+		<separator />
+
+		<groupbox title="filter">
+			<grid>
+				<columns>
+					<column width="300px" />
+					<column />
+				</columns>
+				<rows>
+					<row>
+						<label value="Product Name" />
+						<textbox value="@bind(vm.productname)" />
+					</row>
+				</rows>
+				<foot>
+					<footer />
+					<footer>
+						<hlayout>
+						<button label="search" onClick="@command('doSearch')" />
+						<separator orient="horizontal" />
+						<button label="Reset" onClick="@command('doReset')" />
+						</hlayout>
+					</footer>
+				</foot>
+			</grid>
+		</groupbox>
+		<separator />
+
+
+		<groupbox>
+			<grid id="grid" mold="paging" pageSize="10"
+				pagingPosition="bottom">
+				<columns>
+					<column label="No" align="left" width="40px" />
+					<column label="Nama Barang" width="200px" />
+					<column label="Stock" />
+					<column label="Price" />
+					<column label="Action" />
+				</columns>
+			</grid>
+		</groupbox>
+	</window>
+</zk>
